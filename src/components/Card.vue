@@ -1,16 +1,22 @@
 <script>
 
 export default {
-    promps: [" character"]
+    props: { character: Object }
 }
 </script>
 
 <template>
     
-        <img :src="character.image" alt="rick">
-        <h4>title</h4>
+        <img :src="character.image" :alt="character.name">
+        <h4>{{ character.name }}</h4>
         <div>
-            description
+            {{ character.gender }}
+        </div>
+        <div>
+            {{ character.species }}
+        </div>
+        <div>
+            {{ character.status }}
         </div>
     
 </template>
@@ -33,9 +39,13 @@ export default {
         margin: 20px auto;
     }
 
+    h4 {
+        padding-bottom: 20px;
+    }
+
     div {
         color: rgb(166, 166, 166);
-        padding: 20px 0;
+
     }
 }
 </style>
