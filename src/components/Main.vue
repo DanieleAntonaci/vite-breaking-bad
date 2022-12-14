@@ -1,14 +1,25 @@
 <script>
+import Card from './Card.vue'
 export default {
-    promps: {
+    components: {
+        Card
+    },
+    props: {
 
     }
 }
 </script>
 
 <template>
-    <main>
+    <main class="container">
+        <div id="numCharaters">
+            Found 60 character
+        </div>
 
+
+        <div id="cards">
+            <Card />
+        </div>
     </main>
         
     
@@ -17,4 +28,17 @@ export default {
 <style lang="scss">
 @use '../style/partials/variables' as *;
 @use '../style/partials/mixin' as *;
+
+#numCharaters {
+    background: #000;
+    color: $primaryColor;
+    padding: 10px;
+
+}
+
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+
+}
 </style>
