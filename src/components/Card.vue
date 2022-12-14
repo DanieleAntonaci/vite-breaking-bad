@@ -1,18 +1,17 @@
 <script>
 
 export default {
-    promps: []
+    promps: [" character"]
 }
 </script>
 
 <template>
-    <div class="card" >
-        <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="rick">
+    
+        <img :src="character.image" alt="rick">
         <h4>title</h4>
         <div>
             description
         </div>
-    </div>
     
 </template>
 

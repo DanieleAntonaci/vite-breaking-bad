@@ -4,6 +4,7 @@ import Main from './components/Main.vue';
 // importazione api
 import { store } from './store.js';
 
+
 export default {
   name: 'App',
   components: {
@@ -15,7 +16,7 @@ export default {
       // sempre per l'api
       store,
     }
-  },
+  }
 }
 </script>
 
@@ -36,7 +37,7 @@ export default {
 
 #bg-color {
   background-color: $primaryBackgroundColor;
-  height: 100vh;
+  height: 100%;
 
   h1,
   h2,
