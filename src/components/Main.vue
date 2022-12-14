@@ -18,7 +18,7 @@ export default {
             axios.get(store.apiUrl)
                 .then(res => {
                     store.characterList = res.data.results;
-                    store.numCharacter = res.data.info;
+                    store.numCharacter = res.data.info.count;
                 })
                 .catch(
                     err => {
@@ -36,7 +36,7 @@ export default {
 <template>
     <main class="container">
         <div id="numCharaters">
-            Found {{ store.numCharacter.count }} character
+            Found {{ store.numCharacter }} character
         </div>
 
 
