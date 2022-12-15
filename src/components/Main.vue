@@ -10,7 +10,6 @@ export default {
         Card,
         BtnSearch
     },
-
     data() {
         return {
             store,
@@ -44,7 +43,7 @@ export default {
 <template>
     <main class="container">
 
-        <BtnSearch @searchStatus="getCharacters"/>
+        <BtnSearch/>
 
         <div id="numCharaters">
             Found {{ store.characterList.length }} character
