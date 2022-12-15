@@ -7,5 +7,5 @@ export const store = reactive({
     title: 'Rick and Morty',
     numCharacter: 0,
     apiNameParameter: 'status',
-    selectStatus: ''
+    selectStatus: 'allCharacters'
 })
