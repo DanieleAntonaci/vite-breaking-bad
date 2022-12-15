@@ -1,7 +1,6 @@
 <script>
 import { store } from '../store.js';
 export default {
-
     data() {
         return {
             store,
@@ -12,15 +11,16 @@ export default {
 </script>
 
 <template>
-    
-    <label for="status">Select status:</label>
-        <select name="status" id="status" required v-model="store.selectStatus"  @change="$emit('searchStatus')">
+    <div>
+        <label for="status">Select status:</label>
+        <select name="status" id="status" required v-model="store.selectStatus"  @change="$emit('onSearchStatus')">
             <option value="allCharacters">--</option>
             <option value="alive">Alive</option>
             <option value="unknown">Unknown</option>
             <option value="dead">Dead</option>
         </select>
-
+    </div>
+    
 </template>
 
 <style lang="scss" scoped>

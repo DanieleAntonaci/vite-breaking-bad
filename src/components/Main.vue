@@ -43,7 +43,7 @@ export default {
 <template>
     <main class="container">
 
-        <BtnSearch/>
+        <BtnSearch @onSearchStatus="getCharacters"/>
 
         <div id="numCharaters">
             Found {{ store.characterList.length }} character
