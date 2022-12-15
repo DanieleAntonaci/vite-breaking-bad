@@ -20,9 +20,9 @@ export default {
     methods: {
         getCharacters() {
             let myUrl = store.apiUrl;
-            // if (store.selectStatus != 'allCharacters') {
-            myUrl += `?${store.apiNameParameter}=${store.selectStatus}`
-            // }
+            if (store.selectStatus != 'allCharacters') {
+                myUrl += `?${store.apiNameParameter}=${store.selectStatus}`
+            }
             axios.get(myUrl)
                 .then(res => {
                     store.characterList = res.data.results;

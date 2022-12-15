@@ -1,9 +1,7 @@
 <script>
 import { store } from '../store.js';
 export default {
-    props: {
-        selectStatus: String
-    },
+
     data() {
         return {
             store,
