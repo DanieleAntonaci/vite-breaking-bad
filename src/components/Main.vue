@@ -1,21 +1,29 @@
 <script>
 import Card from './Card.vue';
+import BtnSearch from './btnSearch.vue';
 import { store } from '../store.js';
 // importo axios
 import axios from 'axios';
 
 export default {
     components: {
-        Card
+        Card,
+        BtnSearch
     },
+
     data() {
         return {
             store,
+
         }
     },
     methods: {
-        getCharacyers() {
-            axios.get(store.apiUrl)
+        getCharacters() {
+            let myUrl = store.apiUrl;
+            // if (store.selectStatus != 'allCharacters') {
+            myUrl += `?${store.apiNameParameter}=${store.selectStatus}`
+            // }
+            axios.get(myUrl)
                 .then(res => {
                     store.characterList = res.data.results;
                     store.numCharacter = res.data.info.count;
@@ -28,15 +36,18 @@ export default {
         }
     },
     mounted() {
-        this.getCharacyers();
+        this.getCharacters();
     }
 }
 </script>
 
 <template>
     <main class="container">
+
+        <BtnSearch @searchStatus="getCharacters"/>
+
         <div id="numCharaters">
-            Found {{ store.numCharacter }} character
+            Found {{ store.characterList.length }} character
         </div>
 
 
@@ -57,6 +68,7 @@ export default {
 <style lang="scss">
 @use '../style/partials/variables' as *;
 @use '../style/partials/mixin' as *;
+
 
 #numCharaters {
     background: #000;

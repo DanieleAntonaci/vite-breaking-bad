@@ -6,4 +6,6 @@ export const store = reactive({
     apiUrl: 'https://rickandmortyapi.com/api/character',
     title: 'Rick and Morty',
     numCharacter: 0,
+    apiNameParameter: 'status',
+    selectStatus: ''
 })
