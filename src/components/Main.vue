@@ -1,6 +1,6 @@
 <script>
 import Card from './Card.vue';
-import BtnSearch from './btnSearch.vue';
+import BtnSearch from './BtnSearch.vue';
 import { store } from '../store.js';
 // importo axios
 import axios from 'axios';

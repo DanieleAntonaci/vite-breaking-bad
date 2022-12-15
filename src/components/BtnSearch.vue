@@ -16,11 +16,11 @@ export default {
 <template>
     
     <label for="status">Select status:</label>
-        <select name="status" id="status" required v-model="store.selectStatus" >
-            <option value="allCharacters" @click="$emit('searchStatus')">--</option>
-            <option value="alive" @click="$emit('searchStatus')">Alive</option>
-            <option value="unknown" @click="$emit('searchStatus')">Unknown</option>
-            <option value="dead" @click="$emit('searchStatus')">Dead</option>
+        <select name="status" id="status" required v-model="store.selectStatus"  @change="$emit('searchStatus')">
+            <option value="allCharacters">--</option>
+            <option value="alive">Alive</option>
+            <option value="unknown">Unknown</option>
+            <option value="dead">Dead</option>
         </select>
 
 </template>
